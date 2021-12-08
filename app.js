@@ -33,3 +33,115 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+let employeeList = []
+let newEmployeeData = {}
+
+const engineerQuestions = [
+    {
+        type: "input",
+        name: "github",
+        message: "GitHub Username: "
+    }
+];
+
+const internQuestions = [
+    {
+        type: "input",
+        name: "school",
+        message: "Intern's School: "
+    }
+];
+
+const managerQuestions = [
+    {
+        type: "input",
+        name: "officeNumber",
+        message: "Manager's Office Number: "
+    }
+]
+
+const questions = [
+    {
+        type: "input",
+        name: "name",
+        message: "Employee Name: "
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "Employee Id: "
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Employee Email: "
+    },
+    {
+        type: "list",
+        name: "role",
+        message: "Employee Role:",
+        choices: ["Engineer", "Intern", "Manager"],
+    }
+
+];
+
+function makeEmployee() {
+    switch(newEmployeeData.role) {
+        case "Engineer": {
+            let newEmployee = new Engineer(newEmployeeData.name, newEmployeeData.id, newEmployeeData.employeeList, newEmployeeData.github);
+            employeeList.push(newEmployee);
+        } break;
+        case "Intern": {
+            let newEmployee = new Intern(newEmployeeData.name, newEmployeeData.id, newEmployeeData.employeeList, newEmployeeData.school);
+            employeeList.push(newEmployee);
+        } break;
+        case "Manager": {
+            let newEmployee = new Manager(newEmployeeData.name, newEmployeeData.id, newEmployeeData.employeeList, newEmployeeData.officeNumber);
+            employeeList.push(newEmployee);
+        }
+    }
+
+    inquirer.prompt([{
+        type: "list",
+        name: "more",
+        message: "Would you like to add another employee?",
+        choices: ["Yes", "No"]
+    }]).then(answers => {
+        if(answers.more === "Yes") {
+            addEmployee();
+        } else {
+            console.log("Rendering html...");
+            console.log(render(employeeList));
+        }
+    })
+}
+
+function addEmployee() {
+    inquirer.prompt(questions).then(answers => {
+        newEmployeeData = answers;
+
+        switch(answers.role) {
+            case "Engineer": {
+                inquirer.prompt(engineerQuestions).then(answers => {
+                    newEmployeeData.github = answers.github;
+                    makeEmployee();
+                });
+            } break;
+            case "Intern": {
+                inquirer.prompt(internQuestions).then(answers => {
+                    newEmployeeData.school = answers.school;
+                    makeEmployee();
+                });
+            } break;
+            case "Manager": {
+                inquirer.prompt(managerQuestions).then(answers => {
+                    newEmployeeData.officeNumber = answers.officeNumber;
+                    makeEmployee();
+                });
+            }break
+        }
+    })
+}
+
+addEmployee();
