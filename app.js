@@ -89,15 +89,15 @@ const questions = [
 function makeEmployee() {
     switch(newEmployeeData.role) {
         case "Engineer": {
-            let newEmployee = new Engineer(newEmployeeData.name, newEmployeeData.id, newEmployeeData.employeeList, newEmployeeData.github);
+            let newEmployee = new Engineer(newEmployeeData.name, newEmployeeData.id, newEmployeeData.email, newEmployeeData.github);
             employeeList.push(newEmployee);
         } break;
         case "Intern": {
-            let newEmployee = new Intern(newEmployeeData.name, newEmployeeData.id, newEmployeeData.employeeList, newEmployeeData.school);
+            let newEmployee = new Intern(newEmployeeData.name, newEmployeeData.id, newEmployeeData.email, newEmployeeData.school);
             employeeList.push(newEmployee);
         } break;
         case "Manager": {
-            let newEmployee = new Manager(newEmployeeData.name, newEmployeeData.id, newEmployeeData.employeeList, newEmployeeData.officeNumber);
+            let newEmployee = new Manager(newEmployeeData.name, newEmployeeData.id, newEmployeeData.email, newEmployeeData.officeNumber);
             employeeList.push(newEmployee);
         }
     }

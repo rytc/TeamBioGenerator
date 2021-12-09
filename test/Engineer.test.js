@@ -17,3 +17,9 @@ test("Can get GitHub username via getGithub()", () => {
   const e = new Engineer("Foo", 1, "test@test.com", testValue);
   expect(e.getGithub()).toBe(testValue);
 });
+
+test("Can get email via getEmail()", () => {
+  const testValue = "test@test.com";
+  const e = new Engineer("Foo", 1, testValue, "GithubUsername");
+  expect(e.getEmail()).toBe(testValue);
+});
