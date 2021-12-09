@@ -111,8 +111,10 @@ function makeEmployee() {
         if(answers.more === "Yes") {
             addEmployee();
         } else {
-            console.log("Rendering html...");
-            console.log(render(employeeList));
+            console.log("Rendering to bio.html");
+            fs.writeFile("bio.html", render(employeeList), err => {
+                if(err) console.log("Failed to write to bio.html: " + err);
+            });
         }
     })
 }
