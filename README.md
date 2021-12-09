@@ -1,35 +1,37 @@
 
-  # TeamBioGenerator
-  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+# TeamBioGenerator
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
-  ## Description
-  A command line NodeJS application that accepts information about employees. Once data input is complete, an HTML page is generated with the information.
+## Description
+A command line NodeJS application that accepts information about employees. Once data input is complete, an HTML page is generated with the information.
 
-  ## Table of Contents
-  - [Installation](#Installation)
-  - [Usage](#Usage)
-  - [License](#License)
-  - [Contributing](#Contributing)
-  - [Tests](#Test-Instructions)
-  - [Questions](#Questions)
+[Video demo](https://youtu.be/zpCOTDjX_bA)
 
-  ## Installation
-  `git clone https://github.com/rytc/TeamBioGenerator`
+## Table of Contents
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Contributing](#Contributing)
+- [Tests](#Test-Instructions)
+- [Questions](#Questions)
 
-  ## Usage
-  Run `node index.js`
-  
-  ## License
-  This project is covered under the The Unlicense
+## Installation
+`git clone https://github.com/rytc/TeamBioGenerator`
 
-  ## Contributing
-  Submit pull requests from your fork.
+## Usage
+Run `node index.js`
 
-  ## Tests
-  Run `npm test`
+## License
+This project is covered under the The Unlicense
 
-  ## Questions
-  - Github is [rytc](https://github.com/rytc)
-  - Email is [ryan@rytc.io](ryan@rytc.io)
+## Contributing
+Submit pull requests from your fork.
+
+## Tests
+Run `npm test`
+
+## Questions
+- Github is [rytc](https://github.com/rytc)
+- Email is [ryan@rytc.io](ryan@rytc.io)
 
   
